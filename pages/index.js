@@ -1,160 +1,121 @@
-import React, { useState } from "react";
-import Script from "next/script";
-import getConstants from "../constants";
-import examConfigs from "../examConfig";
-import Dropdown from "../components/dropdown";
-import { useRouter } from "next/router";
-import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 
-const ExamForm = () => {
-  const [selectedExam, setSelectedExam] = useState("");
-  const [formData, setFormData] = useState({});
-  const [config, setConfig] = useState(null);
-  const router = useRouter();
-
-  const handleExamChange = (selectedOption) => {
-    setSelectedExam(selectedOption.value);
-    setConfig(examConfigs[selectedOption.value]);
-    if (selectedOption.code !== undefined) {
-      setFormData({
-        exam: selectedOption.value,
-        rank: 0,
-        code: selectedOption.code,
-        // apiEndpoint: selectedOption.apiEndpoint,
-      });
-    } else {
-      setFormData({
-        exam: selectedOption.value,
-        rank: 0,
-        // apiEndpoint: selectedOption.apiEndpoint,
-      });
-    }
-  };
-
-  const handleInputChange = (name) => (selectedOption) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: selectedOption.label,
-    }));
-  };
-
-  const handleRankChange = (e) => {
-    const enteredRank = e.target.value;
-    setFormData((prevData) => ({
-      ...prevData,
-      rank: enteredRank,
-    }));
-  };
-  const handleSubmit = async () => {
-    const queryString = Object.entries(formData)
-      .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-      .join("&");
-    router.push(`/college_predictor?${queryString}`);
-  };
-  const isSubmitDisabled = Object.values(formData).some((value) => !value);
-  const renderFields = () => {
-    if (!selectedExam) return null;
-
-    if (!config) return null;
-
-    return config.fields.map((field) => (
-      <div key={field.name} className="my-4 w-full sm:w-3/4">
-        <label className="block text-md font-semibold text-gray-700 mb-2 -translate-x-4">
-          {field.label}
-        </label>
-        <Dropdown
-          options={field.options.map((option) =>
-            typeof option === "string"
-              ? { value: option, label: option }
-              : option
-          )}
-          onChange={handleInputChange(field.name)}
-          className="w-full"
-        />
-      </div>
-    ));
-  };
-
+export default function Home() {
   return (
     <>
-      <Head>
-        <title>College Predictor - Home</title>
-      </Head>
-      <div className="flex flex-col h-fit">
-        <div className="flex flex-col justify-start items-center w-full mt-8 pb-10">
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-FHGVRT52L7"
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag(){window.dataLayer.push(arguments);}
-                        gtag('js', new Date());
-
-                        gtag('config', 'G-FHGVRT52L7');
-                      `}
-          </Script>
-          <div className="text-center flex flex-col items-center w-full sm:w-3/4 md:w-2/3 lg:w-1/2 mt-8 p-8 pb-10 bg-[#f8f9fa] shadow-inner drop-shadow-md rounded-md">
-            <h1 className="text-2xl md:text-3xl font-bold mb-6">
-              {getConstants().TITLE}
-            </h1>
-            <div className="flex flex-col justify-center sm:flex-row  flex-wrap w-full">
-              <div className="my-4 w-full sm:w-3/4">
-                <label
-                  htmlFor="exam"
-                  className="block text-md font-semibold text-gray-700 mb-2 -translate-x-4"
-                >
-                  Select an exam
-                </label>
-                <Dropdown
-                  options={Object.keys(examConfigs).map((exam) => ({
-                    value: exam,
-                    label: exam,
-                    code: examConfigs[exam].code,
-                    apiEndpoint: examConfigs[exam].apiEndpoint,
-                  }))}
-                  onChange={handleExamChange}
-                  className="w-full"
-                />
-              </div>
-              {renderFields()}
-              {selectedExam && (
-                <div className="my-4 w-full sm:w-3/4">
-                  <label className="block text-md font-semibold text-gray-700 mb-2 -translate-x-3">
-                    Enter Category Rank
-                  </label>
-                  <input
-                    type="number"
-                    value={formData.rank || ""}
-                    onChange={handleRankChange}
-                    className="border border-gray-300 rounded w-full p-2 text-center"
-                    placeholder="Enter your rank"
-                  />
-                </div>
-              )}
+      <div className="h-[80vh] bg-[#893ae9] flex items-center justify-center font-sans">
+        <div className="text-white max-w-2xl p-8">
+          <h1 className="text-[3rem] text-white font-bold mb-4">
+            Join College Dost, India’s Leading Community for 12th class
+            graduates
+          </h1>
+          <p className="mb-6 text-lg">
+            Get up-to-date information on JEE, EAMCET, exam tips, engineering
+            counselling, branch selection, cutoffs, results, etc.
+          </p>
+          <div className="flex gap-8 mb-8">
+            <div>
+              <p className="text-2xl font-semibold">3,00,000+</p>
+              <p>Students</p>
             </div>
-            {selectedExam && (
-              <>
-                <button
-                  className="mt-2 px-5 py-2 rounded-lg bg-blue-600 text-white cursor-pointer hover:bg-blue-700 active:bg-blue-800 disabled:bg-gray-300 disabled:cursor-not-allowed -translate-x-4"
-                  disabled={isSubmitDisabled}
-                  onClick={handleSubmit}
-                >
-                  Submit
-                </button>
-                {isSubmitDisabled && (
-                  <p className="text-red-600 text-sm mt-2 -translate-x-4">
-                    Please fill all the fields before submitting!
-                  </p>
-                )}
-              </>
-            )}
+            <div>
+              <p className="text-2xl font-semibold">3,000+</p>
+              <p>College Covered</p>
+            </div>
+          </div>
+          <Link href="/" passHref>
+            <span className="bg-white text-purple-500 font-semibold py-3 px-16 rounded-[5px] hover:bg-gray-100 transition">
+              Join WhatsApp
+            </span>
+          </Link>
+          <p className="mt-6 text-sm">
+            Receive Career Guidance from the team behind College Dost
+          </p>
+        </div>
+        <div className="hidden sm:block">
+          <Image
+            src="/images/student-dost-landing-page.webp"
+            alt="Hero"
+            width={500}
+            height={800}
+            className="object-cover"
+          />
+        </div>
+      </div>
+
+      <div className="py-16 flex flex-col md:flex-row justify-between items-center max-w-[68rem] mx-auto space-y-8 md:space-y-0 md:space-x-8">
+        <div className="text-center md:text-left max-w-lg">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Get Trustworthy Information and Career Guidance
+          </h2>
+          <p className="text-gray-600 text-[1.1rem] mb-6">
+            After completing intermediate/12th class, you’re in one of the most
+            crucial stages of your life. You've to make important decisions
+            while dealing with many confusions. And, it’s hard to know who to
+            trust for information with 1000s of websites available.
+          </p>
+          <p className="text-gray-600 text-[1.1rem] mb-6">
+            College Dost is here to help you make the right choices for your
+            future!
+          </p>
+          <Link href="/" passHref>
+            <span className="bg-purple-600 text-white font-semibold py-3 px-16 rounded-[5px] hover:bg-purple-700 transition">
+              Join WhatsApp
+            </span>
+          </Link>
+        </div>
+        <div className="flex-shrink-0">
+          <Image
+            src="/images/trust.webp"
+            alt="Career Guidance"
+            width={400}
+            height={300}
+          />
+        </div>
+      </div>
+
+      <div className="bg-[#f2f5fa] py-16">
+        <div className="flex flex-col md:flex-row justify-between items-center max-w-[68rem] mx-auto space-y-8 md:space-y-0 md:space-x-8">
+          <div className="flex-shrink-0">
+            <Image
+              src="/images/support.webp"
+              alt="Career Guidance"
+              width={500}
+              height={500}
+            />
+          </div>
+          <div className="text-center md:text-left max-w-lg">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              Receive Complete Support Until You Join the Best College
+            </h2>
+            <ul className="list-none space-y-4 text-[1.1rem] text-gray-600 mb-6">
+              <li className="flex items-start">
+                <span className="text-purple-600 font-semibold mr-2">✓</span>
+                Mentorship by seniors in college and industry experts
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-600 font-semibold mr-2">✓</span>
+                Exclusive access to events and webinars conducted by College
+                Dost
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-600 font-semibold mr-2">✓</span>
+                Live Q&A Sessions
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-600 font-semibold mr-2">✓</span>
+                Latest updates related to counselling
+              </li>
+            </ul>
+            <Link href="/" passHref>
+              <span className="bg-purple-600 text-white font-semibold py-3 px-16 rounded-[5px] hover:bg-purple-700 transition">
+                Join WhatsApp
+              </span>
+            </Link>
           </div>
         </div>
       </div>
     </>
   );
-};
-
-export default ExamForm;
+}
