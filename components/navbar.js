@@ -21,37 +21,42 @@ const Navbar = ({ item1, item2, item3, item4 }) => {
         <div className="flex text-white text-lg gap-10">
           <Link
             href="/"
-            className={`link ${
-              pathname === "/" ? "font-bold" : "hover:underline cursor-pointer"
-            }`}
+            className={`link ${pathname === "/" ? "font-bold" : "hover:underline cursor-pointer"
+              }`}
           >
             Home
           </Link>
           <Link
             href="/College-Predictor"
-            className={`link ${
-              pathname === "/College-Predictor" ? "font-bold" : "hover:underline cursor-pointer"
-            }`}
+            className={`link ${pathname === "/College-Predictor" ? "font-bold" : "hover:underline cursor-pointer"
+              }`}
           >
             {item1}
           </Link>
           <Link
             href="/scholarships"
-            className={`link ${
-              pathname === "/scholarships"
+            className={`link ${pathname === "/scholarships"
                 ? "font-bold"
                 : "hover:underline cursor-pointer"
-            }`}
+              }`}
           >
             {item2}
           </Link>
           <Link
-            href="/contact"
-            className={`link ${
-              pathname === "/contact"
+            href="/comparecollege"
+            className={`link ${pathname === "/comparecollege"
                 ? "font-bold"
                 : "hover:underline cursor-pointer"
-            }`}
+              }`}
+          >
+            {item4}
+          </Link>
+          <Link
+            href="/contact"
+            className={`link ${pathname === "/contact"
+                ? "font-bold"
+                : "hover:underline cursor-pointer"
+              }`}
           >
             {item3}
           </Link>

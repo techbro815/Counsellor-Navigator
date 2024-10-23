@@ -26,7 +26,7 @@ const ContactUs = () => {
                             </label>
                             <Dropdown
                                 options={listOfColleges.map((option) => ({
-                                    value: option.name, label: option.name
+                                    value: option.Name, label: option.Name
                                 }))}
                                 onChange={(selectedOption) => setCollege1(selectedOption.value)}
                                 className="w-full"
@@ -38,7 +38,7 @@ const ContactUs = () => {
                             </label>
                             <Dropdown
                                 options={listOfColleges.map((option) => ({
-                                    value: option.name, label: option.name
+                                    value: option.Name, label: option.Name
                                 }))}
                                 onChange={(selectedOption) => setCollege2(selectedOption.value)}
                                 className="w-full"
@@ -62,8 +62,8 @@ const ContactUs = () => {
                                 {Object.keys(listOfColleges[0]).map((key) => (
                                     <tr key={key}>
                                         <td className="border border-gray-300 p-2">{key}</td>
-                                        <td className="border border-gray-300 p-2">{listOfColleges.find((college) => college.name === college1)[key]}</td>
-                                        <td className="border border-gray-300 p-2">{listOfColleges.find((college) => college.name === college2)[key]}</td>
+                                        <td className="border border-gray-300 p-2">{listOfColleges.find((college) => college.Name === college1)[key]}</td>
+                                        <td className="border border-gray-300 p-2">{listOfColleges.find((college) => college.Name === college2)[key]}</td>
                                     </tr>
                                 ))}
                             </tbody>
