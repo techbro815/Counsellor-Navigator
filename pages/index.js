@@ -7,7 +7,7 @@ export default function Home() {
       <div className="h-[80vh] bg-[#893ae9] flex items-center justify-center font-sans">
         <div className="text-white max-w-2xl p-8">
           <h1 className="text-[3rem] text-white font-bold mb-4">
-            Join College Dost, India’s Leading Community for 12th class
+            Join Counsellor Navigator, India's Leading Community for 12th class
             graduates
           </h1>
           <p className="mb-6 text-lg">
@@ -24,13 +24,13 @@ export default function Home() {
               <p>College Covered</p>
             </div>
           </div>
-          <Link href="/" passHref>
+          <Link href="/College-Predictor" passHref>
             <span className="bg-white text-purple-500 font-semibold py-3 px-16 rounded-[5px] hover:bg-gray-100 transition">
-              Join WhatsApp
+              Predict College
             </span>
           </Link>
           <p className="mt-6 text-sm">
-            Receive Career Guidance from the team behind College Dost
+            Receive Career Guidance from the team behind Counsellor Navigator
           </p>
         </div>
         <div className="hidden sm:block">
@@ -50,20 +50,15 @@ export default function Home() {
             Get Trustworthy Information and Career Guidance
           </h2>
           <p className="text-gray-600 text-[1.1rem] mb-6">
-            After completing intermediate/12th class, you’re in one of the most
+            After completing intermediate/12th class, you're in one of the most
             crucial stages of your life. You've to make important decisions
-            while dealing with many confusions. And, it’s hard to know who to
+            while dealing with many confusions. And, it's hard to know who to
             trust for information with 1000s of websites available.
           </p>
           <p className="text-gray-600 text-[1.1rem] mb-6">
-            College Dost is here to help you make the right choices for your
+            Counsellor Navigator is here to help you make the right choices for your
             future!
           </p>
-          <Link href="/" passHref>
-            <span className="bg-purple-600 text-white font-semibold py-3 px-16 rounded-[5px] hover:bg-purple-700 transition">
-              Join WhatsApp
-            </span>
-          </Link>
         </div>
         <div className="flex-shrink-0">
           <Image
@@ -108,11 +103,6 @@ export default function Home() {
                 Latest updates related to counselling
               </li>
             </ul>
-            <Link href="/" passHref>
-              <span className="bg-purple-600 text-white font-semibold py-3 px-16 rounded-[5px] hover:bg-purple-700 transition">
-                Join WhatsApp
-              </span>
-            </Link>
           </div>
         </div>
       </div>
