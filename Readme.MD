@@ -18,7 +18,7 @@
 
 ### Final Selection Page
 
-![Final Selection](https://raw.githubusercontent.com/techbro815/Counsellor-Navigator/main/public/images/SS4.png)
+![Final Selection](https://raw.githubusercontent.com/techbro815/Counsellor-Navigator/main/public/images/SS.png)
 
 **CounsellorNavigator.com** is a data-driven online platform designed to help students choose the right college based on their academic performance, preferences, and career aspirations. Utilizing advanced **data analytics and machine learning**, this platform offers **personalized** college recommendations, making the admission process more efficient and tailored to each individual.
 
