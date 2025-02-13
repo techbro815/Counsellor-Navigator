@@ -14,7 +14,7 @@
 
 ### College Details Page
 
-![College Details](https://raw.githubusercontent.com/techbro815/Counsellor-Navigator/main/public/images/SS3.jpg)
+![College Details](https://raw.githubusercontent.com/techbro815/Counsellor-Navigator/main/public/images/SS3.png)
 
 ### Final Selection Page
 
