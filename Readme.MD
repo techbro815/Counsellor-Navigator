@@ -133,7 +133,7 @@ This project is licensed under the **MIT License**.
 
 ### Contact & Support
 
-For any queries or contributions, reach out to:
+For any queries or contributions, reach out to :
 
 - **Project Lead**: Sujal Thakur
 - **Email**: [sujal.santosh23@vit.edu](mailto:sujalthakurofficial.tech@gmail.com)
