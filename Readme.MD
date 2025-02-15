@@ -136,8 +136,8 @@ This project is licensed under the **MIT License**.
 For any queries or contributions, reach out to:
 
 - **Project Lead**: Sujal Thakur
-- **Email**: [sujal.santosh23@vit.edu](mailto:sujal.santosh23@vit.edu)
-- **GitHub**: [Your GitHub Profile](https://github.com/yourusername)
+- **Email**: [sujal.santosh23@vit.edu](mailto:sujalthakurofficial.tech@gmail.com)
+- **GitHub**: [Your GitHub Profile](https://github.com/techbro815)
 
 ---
 
